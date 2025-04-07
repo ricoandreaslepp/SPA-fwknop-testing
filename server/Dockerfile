@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 
 EXPOSE 4444
 
@@ -14,6 +14,7 @@ RUN apt-get install -y make automake curl git net-tools conntrack openssl libssl
 RUN apt-get install -y iptables
 
 # Install FWKNOP
+# TODO: implement changes here
 RUN git clone https://github.com/mrash/fwknop
 RUN cd fwknop && libtoolize --force && aclocal && autoheader && automake --force-missing --add-missing && autoconf
 RUN cd fwknop && ./configure --disable-client --prefix=/usr --sysconfdir=/etc && make && make install
@@ -21,4 +22,5 @@ RUN cd fwknop && ./configure --disable-client --prefix=/usr --sysconfdir=/etc &&
 # Copy configuration files
 COPY . .
 
-CMD ["/bin/bash","-c", " ./run.sh $SERVER_HOSTNAME"]
+# CMD ["/bin/bash","-c", " ./run.sh"]
+CMD ["/bin/bash", "-c", "sleep infinity"]
