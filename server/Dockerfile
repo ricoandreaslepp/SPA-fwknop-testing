@@ -22,5 +22,4 @@ RUN cd fwknop && ./configure --disable-client --prefix=/usr --sysconfdir=/etc &&
 # Copy configuration files
 COPY . .
 
-# CMD ["/bin/bash","-c", " ./run.sh"]
-CMD ["/bin/bash", "-c", "sleep infinity"]
+CMD ["/bin/bash","-c", " ./run.sh"]
