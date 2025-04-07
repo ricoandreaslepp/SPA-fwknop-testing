@@ -11,6 +11,8 @@ Single Packet Authorization (SPA) using the `fwknop` implementation inside a Doc
 
 ```bash
 $ docker compose up -d --build
+# for development only rebuild the server
+$ docker compose up -d --build spa-server
 ```
 
 We can now check that the port is closed from the client:
