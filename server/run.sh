@@ -7,7 +7,7 @@ iptables -S
 yes Y  | cp config/access.conf /etc/fwknop/
 yes Y  | cp config/fwknopd.conf /etc/fwknop/
 
-#fwknopd -f
+fwknopd -v -f
 
 while true; do
     sleep 100
