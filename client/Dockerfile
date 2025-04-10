@@ -10,8 +10,7 @@ RUN apt-get install -y make automake curl git net-tools conntrack openssl libssl
 RUN apt-get install -y fwknop-client
 
 # Copy configuration files
-COPY . /root
-
-RUN chmod 0600 /root/.fwknoprc
+COPY . .
+RUN chmod 0600 .fwknoprc
 
 CMD ["/bin/bash", "-c", "sleep infinity"]
