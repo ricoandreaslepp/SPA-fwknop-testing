@@ -21,5 +21,6 @@ RUN cd fwknop && ./configure --disable-client --prefix=/usr --sysconfdir=/etc &&
 
 # Copy configuration files
 COPY . .
+RUN chmod +x ./run.sh
 
 CMD ["/bin/bash","-c", " ./run.sh"]
