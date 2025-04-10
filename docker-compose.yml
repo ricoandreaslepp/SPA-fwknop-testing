@@ -20,17 +20,19 @@ services:
     cap_add:
       - NET_ADMIN
     networks:
-      - spa-net
+      spa-net:
+        ipv4_address: 172.24.0.2
 
   # ============== SPA CLIENT ==============
 
-  spa-clientr:
+  spa-client:
     container_name: spa-client
     build:
       context: ./client
       dockerfile: Dockerfile
     networks:
-      - spa-net
+      spa-net:
+        ipv4_address: 172.24.0.3
     depends_on:
       - spa-server
 

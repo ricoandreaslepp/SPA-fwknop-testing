@@ -28,8 +28,8 @@ After sending a valid SPA packet, we can connect:
 # manually
 $ fwknop -A tcp/22 -a 172.21.0.2 -D 172.21.0.3 --key-base64-hmac=c0TOaMJ2aVPdYTh4Aa25Dwxni7PrLo2zLAtBoVwSepkvH6nLcW45Cjb9zaEC2SQd03kaaV+Ckx3FhCh5ohNM5Q== --key-base64-rijndael=Sz80RjpXOlhH2olGuKBUamHKcqyMBsS9BTgLaMugUsg= --verbose
 # authenticate with the .fwknoprc file
-$ fwknop -n server
-$ ssh root@server
+$ fwknop --rc-file /client/.fwknoprc -n spa-server
+$ ssh root@spa-server
 ```
 
 ## 2. Setting up new keys
