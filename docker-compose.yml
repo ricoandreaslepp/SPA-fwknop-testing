@@ -11,8 +11,6 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
-    ports:
-      - "4444:4444"
     volumes:
       - ./data/certs:/gateway/certs
     cap_add:
