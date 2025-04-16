@@ -12,5 +12,6 @@ RUN apt-get install -y fwknop-client
 # Copy configuration files
 COPY . .
 RUN chmod 0600 .fwknoprc
+RUN chmod +x test.sh
 
 CMD ["/bin/bash", "-c", "sleep infinity"]
