@@ -2,8 +2,8 @@
 
 [spa-server]
 ACCESS                      tcp/80
-SPA_SERVER                  172.18.0.2
-ALLOW_IP                    172.18.0.3
+SPA_SERVER                  CLIENT_IP
+ALLOW_IP                    CLIENT_IP
 KEY_BASE64                  1OHsGO0jB+eRivGoNzec8g==
 HMAC_KEY_BASE64             XMRP+hsgkx0wThsZ4gU1MGTTg9yd3USdNzPIFopdOyd1cS1m6Rxu+ognVnvaLX3LwyshfKun4s1iX8fmkGW+MA==
 USE_HMAC                    Y

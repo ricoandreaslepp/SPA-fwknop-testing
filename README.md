@@ -55,7 +55,3 @@ Then, run the following command to request access to the server:
 $ docker exec -it spa-client /bin/bash
 > fwknop -n [SERVER_IP] --wget-cmd /usr/bin/wget -a [CLIENT_IP]
 ```
-
-## TODO
-- [ ] Bash script for testing connections;
-- [ ] Make the container IPs dynamic in the configurations files;

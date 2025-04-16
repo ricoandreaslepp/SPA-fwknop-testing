@@ -16,7 +16,10 @@ RUN cd fwknop && CFLAGS="-lssl -lcrypto" ./configure --disable-server --prefix=/
 
 # Copy configuration files
 COPY . .
-RUN chmod 0600 .fwknoprc
 RUN chmod +x test.sh
+RUN chmod 0600 .fwknoprc
+
+# Add IP to configuration file
+RUN sed -i "s/CLIENT_IP/$(hostname -I)/" .fwknoprc
 
 CMD ["/bin/bash", "-c", "sleep infinity"]
