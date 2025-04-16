@@ -12,7 +12,7 @@ RUN apt-get install -y make automake curl git net-tools conntrack openssl libssl
 # Install fwknop client
 RUN git clone https://github.com/ricoandreaslepp/fwknop-totp fwknop
 RUN cd fwknop && libtoolize --force && aclocal && autoheader && automake --force-missing --add-missing && autoconf
-RUN cd fwknop && ./configure --disable-server --prefix=/usr --sysconfdir=/etc && make && make install
+RUN cd fwknop && CFLAGS="-lssl -lcrypto" ./configure --disable-server --prefix=/usr --sysconfdir=/etc && make && make install
 
 # Copy configuration files
 COPY . .
