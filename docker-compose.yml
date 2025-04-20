@@ -13,6 +13,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./data/certs:/gateway/certs
+      - ../fwknop-totp:/gateway/fwknop
     cap_add:
       - NET_ADMIN
     networks:
@@ -25,6 +26,8 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
+    volumes:
+      - ../fwknop-totp:/client/fwknop
     networks:
       - spa-net
     depends_on:

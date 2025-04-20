@@ -14,9 +14,9 @@ RUN apt-get install -y make automake curl git net-tools conntrack openssl libssl
 RUN apt-get install -y iptables
 
 # Install fwknop server
-RUN git clone https://github.com/ricoandreaslepp/fwknop-totp fwknop
-RUN cd fwknop && libtoolize --force && aclocal && autoheader && automake --force-missing --add-missing && autoconf
-RUN cd fwknop && ./configure --disable-client --prefix=/usr --sysconfdir=/etc && make && make install
+# RUN git clone https://github.com/ricoandreaslepp/fwknop-totp fwknop
+# RUN cd fwknop && libtoolize --force && aclocal && autoheader && automake --force-missing --add-missing && autoconf
+# RUN cd fwknop && ./configure --disable-client --prefix=/usr --sysconfdir=/etc && make && make install
 
 # Copy configuration files
 COPY . .

@@ -10,9 +10,9 @@ RUN apt-get install -y make automake curl git net-tools conntrack openssl libssl
 # RUN apt-get install -y fwknop-client
 
 # Install fwknop client
-RUN git clone https://github.com/ricoandreaslepp/fwknop-totp fwknop
-RUN cd fwknop && libtoolize --force && aclocal && autoheader && automake --force-missing --add-missing && autoconf
-RUN cd fwknop && CFLAGS="-lssl -lcrypto" ./configure --disable-server --prefix=/usr --sysconfdir=/etc && make && make install
+# RUN git clone https://github.com/ricoandreaslepp/fwknop-totp fwknop
+# RUN cd fwknop && libtoolize --force && aclocal && autoheader && automake --force-missing --add-missing && autoconf
+# RUN cd fwknop && CFLAGS="-lssl -lcrypto" ./configure --disable-server --prefix=/usr --sysconfdir=/etc && make && make install
 
 # Copy configuration files
 COPY . .
@@ -20,6 +20,7 @@ RUN chmod +x test.sh
 RUN chmod 0600 .fwknoprc
 
 # Add IP to configuration file
-RUN sed -i "s/CLIENT_IP/$(hostname -I)/" .fwknoprc
+RUN sed -i "s/CLIENT_IP/172.17.0.2/" .fwknoprc
+RUN sed -i "s/SERVER_IP/172.17.0.3/" .fwknoprc
 
 CMD ["/bin/bash", "-c", "sleep infinity"]
