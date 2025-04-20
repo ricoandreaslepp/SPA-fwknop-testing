@@ -16,7 +16,7 @@ RUN apt-get install -y make automake curl git net-tools conntrack openssl libssl
 
 # Copy configuration files
 COPY . .
-RUN chmod +x test.sh
+RUN chmod +x ./test.sh ./rebuild.sh
 RUN chmod 0600 .fwknoprc
 
 # Add IP to configuration file

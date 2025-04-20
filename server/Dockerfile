@@ -20,6 +20,6 @@ RUN apt-get install -y iptables
 
 # Copy configuration files
 COPY . .
-RUN chmod +x ./run.sh
+RUN chmod +x ./run.sh ./rebuild.sh
 
 CMD ["/bin/bash","-c", " ./run.sh"]
