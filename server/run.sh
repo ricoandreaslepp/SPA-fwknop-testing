@@ -4,10 +4,10 @@ iptables -P INPUT DROP
 iptables -P FORWARD DROP
 iptables -S
 
-yes Y  | cp config/access.conf /etc/fwknop/
-yes Y  | cp config/fwknopd.conf /etc/fwknop/
+mkdir -p /etc/fwknop/
 
-fwknopd -v -f
+yes Y  | cp config/totp_access.conf /etc/fwknop/access.conf
+yes Y  | cp config/fwknopd.conf /etc/fwknop/
 
 while true; do
     sleep 100
